@@ -1,0 +1,77 @@
+.users-container {
+    padding: 10px;
+    
+}
+
+
+
+.users-container h2 {
+    text-align: center;
+    font-family: "Times New Roman", Times, serif;
+    text-shadow: 2px 0px 3px #1f1f1f;
+    color: #1f1f1f;
+    margin-top: 6px;
+}
+
+.user-grid {
+       display: flex;
+       flex-wrap: wrap;
+       gap: 25px;
+       display: flex;
+       justify-content: center; 
+
+}
+
+.user-card {
+    padding: 20px;
+    height: 210px;
+    width: 170px;
+    border-radius: 5%;
+    border: 2px solid #1f1f1f;
+    margin-top: 20px;
+    text-align: center;
+}
+ 
+.user-card img {
+     height: 90px;
+     width: 100%;
+     /* object-fit: cover; */
+     border-radius: 10%;
+     border: 2px solid black; 
+}
+
+.user-card h5 {
+    padding: 3px;
+    font-style: italic;
+}
+
+.user-card p {
+    font-size:small ;
+    padding: 2px;
+}
+
+.delete-btn {
+    padding: 8px 10px ;
+    border-radius: 20%;
+    margin-top: 10px;
+    background-color: red;
+    color: white;
+    overflow: hidden;
+    cursor: pointer;
+    border: none;
+}
+
+.edit-btn {
+    padding: 8px 15px;
+    margin-left: 7px;
+    border-radius: 20%;
+    background-color: green;
+    color: white;
+    overflow: hidden;
+    cursor: pointer;
+    border: none;
+}
+
+
+
+
