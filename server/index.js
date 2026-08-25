@@ -41,8 +41,8 @@ app.set("view engine" , 'ejs');
 app.use("/uploads" , express.static(path.join(__dirname , "uploads")))
 app.use(cors())
 
-
-app.post("/upload" , (req,res)=>{
+app.post("/upload", (req,res)=>{
+    try {
     const form = new formidable.IncomingForm();
     form.parse(req, async (err,fields,files)=>{
         if(err){
@@ -105,6 +105,12 @@ app.post("/upload" , (req,res)=>{
 
         
     })
+} catch(err){
+    console.log(err);
+    return res.status(500).json({
+        message:"Server Error!"
+    })
+}
     
 
 });
