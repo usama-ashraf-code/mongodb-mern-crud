@@ -1,9 +1,8 @@
-import {  useState } from 'react'
+import {  useState  , useRef} from 'react'
 import './App.css'
 import Navbar from './Navbar'
 import axios from 'axios'
 import { z } from 'zod'
-
 const userSchema = z.object({
   name: z.string().min(1, "Name is required!"),
   email:z.string().email("Invalid email!"),
@@ -19,6 +18,8 @@ function App() {
    const[password,setPassword]=useState("");
    const[errors , setErrors]= useState({});
     
+
+   const fileInputRef = useRef(null);
    const handleSubmit = async (e)=> {
         e.preventDefault();
 
@@ -49,6 +50,15 @@ function App() {
         const res = await axios.post("http://localhost:3000/upload" , formData);
         console.log("Server Response" , res.data);
         alert(res.data.msg);
+
+        setName("")
+       setEmail("")
+       setImage(null)
+       setPassword("")
+       setErrors({})
+       if(fileInputRef.current){
+        fileInputRef.current.value = ""
+       }
       }
       catch (error) {
         console.log("Error in sending data" , error)
