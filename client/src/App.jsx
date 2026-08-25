@@ -46,7 +46,7 @@ function App() {
       
 
       try {
-        const res = await axios.post("http:/localhost:3000/upload" , formData);
+        const res = await axios.post("localhost:3000/upload" , formData);
         console.log("Server Response" , res.data);
         alert(res.data.msg);
       }
